@@ -1,11 +1,11 @@
-import { notionClient, getPages } from "@/utils/notion";
+import { getPages } from "@/utils/notion";
 import BlogCard from "@/components/BlogCard";
 
 const BlogLandingPage = ({ posts }) => {
   return (
     <div className="container mx-auto py-10">
       <div className="mx-4 grid grid-cols-4 gap-8 md:mx-0 md:grid-cols-12 md:gap-8">
-        <h1 className="text-4xl font-semibold col-span-4 md:col-span-full">
+        <h1 className="text-4xl font-bold col-span-4 md:col-span-full">
           BLOG LIST
         </h1>
         <div className="col-span-4 md:col-span-full flex items-center gap-8 flex-wrap overflow-hidden">

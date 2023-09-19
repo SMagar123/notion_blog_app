@@ -16,15 +16,21 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { BlogCard } from "@/components/BlogCardDisplay";
 
 const Blog = ({ post, html }) => {
+  console.log(post);
   return (
-    <div>
-      <BlogCard
-        image={post[0].properties.Image.files[0].name}
-        heading={post[0].properties.Heading.title[0].plain_text}
-        description={post[0].properties.Description.rich_text[0].plain_text}
-        date={post[0].properties.Date.date.start}
-        content={html}
-      />
+    <div className="container mx-auto py-10">
+      <div className="mx-4 grid grid-cols-4 gap-8 md:mx-0 md:grid-cols-12 md:gap-8">
+        <BlogCard
+          image={post[0].properties.Image.files[0].name}
+          heading={post[0].properties.Heading.title[0].plain_text}
+          description={post[0].properties.Description.rich_text[0].plain_text}
+          date={post[0].properties.Date.date.start}
+          sub_description={
+            post[0].properties.Sub_description.rich_text[0].plain_text
+          }
+          content={html}
+        />
+      </div>
     </div>
   );
 };
